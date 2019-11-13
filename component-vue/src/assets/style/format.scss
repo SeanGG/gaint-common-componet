@@ -1,0 +1,80 @@
+@import url(//at.alicdn.com/t/font_1160128_ozsa0ypgf8.css);  // iconfont
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="el-icon-gaint"],
+[class*=" el-icon-gaint"] {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  text-decoration: none;
+}
+
+.clearfix {
+  &:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
+}
+
+.tl {
+  text-align: left;
+}
+
+.tr {
+  text-align: right;
+}
+
+// html,
+// body {
+//   min-height: 100%;
+// }
+html,
+body {
+  font-family: PingFangSC-Light, helvetica neue, Microsoft Yahei, Avenir, Helvetica, Arial, sans-serif;
+  color: #2c3e50;
+  text-align: center;
+}
+
+#app {}
+
+// 页面居中定宽
+.block-main {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+// 电话样式
+.tel {
+  color:#2093f7;
+  font-weight: 600;
+  font-size: 1.2em;
+}
+
+
+// 公共参数
+$headerHeight: 60px;

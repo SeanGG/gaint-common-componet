@@ -1,0 +1,101 @@
+@import '~@/assets/style/format.scss';
+
+.footer {
+  overflow: hidden;
+
+  .footer-help,
+  .footer-copyright {
+    @extend .block-main;
+  }
+
+  .footer-help {
+    margin: 30px auto;
+
+    .help-grid {
+      text-align: left;
+
+      .title {
+        height: 22px;
+        line-height: 22px;
+        font-size: 14px;
+        font-weight: 600;
+        color: #4c4c4c;
+        margin: 0;
+        padding: 10px 0 0;
+        overflow: hidden;
+      }
+
+      .help-list {
+        font-size: 14px;
+        letter-spacing: -1px;
+        color: #646464;
+        list-style: none;
+        margin: 0;
+        padding: 5px 0 0;
+
+        li {
+          zoom: 1;
+          position: relative;
+          z-index: 1;
+          line-height: 18px;
+          margin: 10px 0 0;
+          padding: 0;
+
+          i {
+            vertical-align: top;
+            margin-right: 5px;
+            margin-top: -2px;
+            font-size: 22px;
+          }
+
+          .help-cell {
+            display: inline-block;
+            cursor: pointer;
+          }
+
+          .mask-img {
+            display: block;
+            visibility: hidden;
+            position: absolute;
+            top: -5px;
+            left: 120px;
+            width: 100px;
+            height: 0px;
+            opacity: 0;
+            transition: all .3s ease-in 0s;
+            background-repeat: no-repeat;
+            background-size: 100%;
+            overflow: hidden;
+
+            &.wechat-QR {
+              background-image: url(~@/assets/images/wechat-QR.png);
+            }
+
+            &.alipay-QR {
+              background-image: url(~@/assets/images/alipay-QR.png);
+            }
+          }
+
+
+          &:hover {
+            .mask-img {
+              display: block;
+              visibility: visible;
+              opacity: 1;
+              height: 100px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .footer-copyright {
+    padding: 5px 0;
+    border-top: 1px solid #d8d8d8;
+    line-height: 32px;
+    font-size: 12px;
+    letter-spacing: -1px;
+    color: #646464;
+  }
+}

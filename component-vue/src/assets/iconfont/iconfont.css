@@ -1,0 +1,38 @@
+@font-face {
+  font-family: "iconfont";
+  src: url('iconfont.eot?t=1556092069335');
+  /* IE9 */
+  src: url('iconfont.eot?t=1556092069335#iefix') format('embedded-opentype'),
+    /* IE6-IE8 */
+    url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAPgAAsAAAAACCAAAAOUAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCCfgqDfINTATYCJAMMCwgABCAFhG0HShslBxEVnAHJfhymW4xbM2fGfTlSvX0HAT23bxblB/MEsjp/QSgAzJwabFiABEgmzPGEd3HHfWV5nayui8NpU3y+N1zmmBx1AcYBBTT2si6hAknQW2R3BWI9eTUEYCWSdETZ8lXrYkZjdxKA6NqpQyvMBRW6I1tgRmBsGKkRMzFglpPkVWBG9H3xhlxhBolBYfes2b5cW0q+HPNyrBrpHtk0QMCezgCI40AB6YAGUb/RVBOVhNJRWPWQJh621UjAy7Fu98sxAWuzf3ggkCCM2CI7xiYrJFfE9kRcGhuHkcC1jwMjYAY2AU8J1j/eiIyzWCLcR9sLDZgS4HTWv3u37ipHtXmM9I+ey7yAKUENFgRNCThXLmmxcLnqT9k0cuPkzaO21PWZOXevI644jo0cjnpTCiywTQmoNm/KgvmBkfPFgtYAqS0OdJi7N/6o1cVV5rKzlcNhc4mBeperQZVfOetvdTobLDiSdMFRb08eu7AJq0c2akGQDRvWF9+tW2/dLqNlpH/r7cOGiEly/wLZy6Nwh3zjbFo+l9oyUseUT24z05AT0dN7e5zssH5y2Ya+E+MnJgyMH3i2XsJ0ahZcsSO7vpTNFwzvLRE9oBOWtKDImpKtzXVWxRjrmuRRqczqtleeKGovs86rjC+I9HYnb7OP1+xXcts1VQXaFd9wrHPMvAqVg2r7WYLKVNPH/v49hvlaUOtj2Tv7capLsSbn15fdkrfkqIoVBhgqzi1Q6fimH4Vnh1UNWRVaIGplwdPRp2tSZGb1ZiejTxZcFtgkrXLpoDe0xM5XJ+VrcJ9UjqTk7/0NdRrFTm7hVfSb2aYBuPc837rI4T6pgVnA/ALMAn4mG1ikDa6tVlpjeSzLrWjLTzNIwAxJh5vYfHnCLwkAZ4LATEAGEhMRoDATj9TYdDBgIy8YMVMCrKRRYbwNP3qjENoCpDIOgcCbHSDx5AQovLmG1NjHYCCQd2DEWyiwUl/4zWhDkCh2U0ZgFS9a/rS7FNnVqomzr1jf3kqeG+GekLJ7qW+6cnRGhEzRp3zWQZWJJQWa0HrwPlGWdMBps6nmsW256UmNS6EylBFYxYtY/sTuUuSgvJrK569Y395KR0Gd9gkpe/VET0MHQM6iCCq4lXPKZx1QZYIlBWJCBngnlIjc3OyA04aNI5BHWlKKoaJmeUl4vxWAFfsJSkihhMY2AG6zWvPu/cX6Pdt/7XZxHmVlVQE=') format('woff2'),
+    url('iconfont.woff?t=1556092069335') format('woff'),
+    url('iconfont.ttf?t=1556092069335') format('truetype'),
+    /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+    url('iconfont.svg?t=1556092069335#iconfont') format('svg');
+  /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="el-icon-gaint"],
+[class*=" el-icon-gaint"] {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.el-icon-gaintwechat-fill:before {
+  content: "\e883";
+}
+
+.el-icon-gaintalipay-circle-fill:before {
+  content: "\e884";
+}
