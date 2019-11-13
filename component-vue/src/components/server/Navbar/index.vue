@@ -42,7 +42,7 @@
           </el-select>
         </div> -->
         <div class="dropdown-grid">
-          <template v-for="(item, index) in route">
+          <template v-for="(item, index) in leftRoute">
             <div
               :key="index"
               class="menu-cell"
@@ -96,9 +96,22 @@
           slot="dropdown"
           style="width:180px"
         >
-          <router-link to="/dashboard">
-            <el-dropdown-item>Dashboard</el-dropdown-item>
-          </router-link>
+          <template v-for="item in rightRoute">
+            <router-link
+              v-if="item.target === 'self'"
+              :key="item.name"
+              :to="item.path"
+            >
+              <el-dropdown-item>{{item.name}}</el-dropdown-item>
+            </router-link>
+            <a
+              v-else
+              :key="item.name"
+              :href="item.path"
+            >
+              <el-dropdown-item>{{item.name}}</el-dropdown-item>
+            </a>
+          </template>
           <span class="user-info-line"></span>
           <el-dropdown-item
             divided
@@ -125,8 +138,7 @@
 
 <script>
 // import Hamburger from '@/components/Hamburger'
-import SvgIcon from '@/components/server/SvgIcon'
-import { queryNavMenu } from '@/api/common'
+import SvgIcon from '../SvgIcon'
 
 export default {
   components: {
@@ -136,7 +148,11 @@ export default {
   props: {
     showHamburger: {
       type: Boolean,
-      default: true
+      default: false
+    },
+    currentMenu: {
+      type: String,
+      default: ''
     },
     token: {
       type: String,
@@ -146,9 +162,25 @@ export default {
       type: String,
       default: ''
     },
+    nodeEnv: {
+      type: String,
+      default: 'development'
+    },
     username: {
       type: String,
       default: '登录人'
+    },
+    leftRoute: {
+      type: Array,
+      default: () => {
+        return []
+      }
+    },
+    rightRoute: {
+      type: Array,
+      default: () => {
+        return []
+      }
     }
   },
   data () {
@@ -158,57 +190,6 @@ export default {
     }
   },
   computed: {
-    currentMenu () {
-      let result = ''
-
-      let { path: actPath } = this.$route
-      actPath = '/' + actPath.split('/')[1]
-
-      const mapRoute = (children, name) => {
-        children.map(childItem => {
-          const { path: childPath, children = [] } = childItem
-          if (actPath === childPath) {
-            result = name
-          } else {
-            children.length > 0 && mapRoute(children, name)
-          }
-        })
-      }
-
-      this.routes.map(item => {
-        const { children = [], path = '', name } = item
-        let actStatus = false
-        if (actPath === path) {
-          result = name
-        }
-        mapRoute(children, name)
-      })
-
-      if (!result) {
-        result = '控制台'
-      }
-
-      return result
-    },
-    route () {
-      // const route = this.$store.getters.permission_routes
-      const result = this.routes.map(item => {
-        const { children = [] } = item
-        let show = false
-        children.map(childItem => {
-          const { showInHeader = false } = childItem
-          if (showInHeader) {
-            show = true
-          }
-        })
-        return {
-          ...item,
-          showInHeader: show
-        }
-      })
-
-      return result
-    },
     menuOptions () {
       let result = []
       this.routes.map(item => {
@@ -220,22 +201,13 @@ export default {
   created () {
   },
   mounted () {
-    // console.log(process.env.VUE_APP_PROJCECT_NAME)
-    this.queryNavMenu()
   },
   methods: {
-    // toggleSideBar () {
-    //   this.$store.dispatch('app/toggleSideBar')
-    // },
-    // async logout () {
-    //   const path = `/login?redirect=${this.$route.fullPath}`
-    //   console.log(path)
-    //   // this.$router.push(path)
-    //   await this.$store.dispatch('user/logout').then(res => {
-    //     console.log('logout')
-    //     this.$router.push(path)
-    //   })
-    // },
+    logout () {
+      const firstHost = this.nodeEnv === 'development' ? 'cas-dev' : 'cas'
+      const publicPath = `//${firstHost}.ztgame.com.cn`
+      this.$emit('logout', publicPath)
+    },
     // changeMenu (data) {
     //   const { path, target = 'self' } = data
     //   if (target === 'self') {
@@ -247,12 +219,6 @@ export default {
     // changeSearch (data) {
     //   console.log(data)
     // },
-    queryNavMenu () {
-      queryNavMenu().then(res => {
-        const { routes = [] } = res
-        this.routes = routes
-      })
-    }
   }
 }
 </script>
